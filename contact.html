@@ -9354,6 +9354,50 @@
     .ct-review:hover { color: var(--prime-blue); text-decoration: underline; text-underline-offset: 4px; }
     .ct-review:focus-visible { outline: 3px solid var(--prime-blue); outline-offset: 3px; border-radius: 4px; }
   </style>
+
+  <style>
+    /* CONTACT FORM */
+    .fm-section { padding: 100px 0 110px; background: #ffffff; }
+    .fm-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 70px; align-items: start; }
+    .fm-intro .prime-section-eyebrow { margin-bottom: 16px; }
+    .fm-intro h2 { color: var(--prime-dark); font-family: "Manrope", sans-serif; font-size: clamp(34px, 3.4vw, 48px); font-weight: 800; line-height: 1.06; letter-spacing: -1.8px; }
+    .fm-intro h2 span { display: block; color: var(--prime-blue); }
+    .fm-intro > p { margin-top: 20px; color: #5d7088; font-size: 17px; line-height: 1.75; }
+    .fm-points { margin-top: 24px; list-style: none; display: grid; gap: 12px; }
+    .fm-points li { position: relative; padding-left: 32px; color: #33415a; font-size: 16px; line-height: 1.5; }
+    .fm-points li::before { content: ""; position: absolute; left: 0; top: 1px; width: 21px; height: 21px; border-radius: 50%; background: var(--prime-blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 12px no-repeat; }
+    .fm-card { padding: 40px; display: grid; gap: 20px; background: #ffffff; border-radius: 24px; box-shadow: 0 1px 2px rgba(17,44,76,0.04), 0 14px 40px rgba(17,44,76,0.09); }
+    .fm-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .fm-field { display: grid; gap: 8px; }
+    .fm-field label { color: var(--prime-dark); font-family: "Poppins", sans-serif; font-size: 13.5px; font-weight: 500; }
+    .fm-field label span, .fm-check label > span { color: var(--prime-blue); }
+    .fm-field input, .fm-field select, .fm-field textarea { width: 100%; min-height: 52px; padding: 12px 16px; border: 1px solid #d6dfeb; border-radius: 12px; background: #f9fbfe; color: var(--prime-dark); font: inherit; font-size: 16px; transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; }
+    .fm-field textarea { resize: vertical; min-height: 140px; line-height: 1.6; }
+    .fm-field input:focus, .fm-field select:focus, .fm-field textarea:focus { outline: none; border-color: var(--prime-blue); background: #ffffff; box-shadow: 0 0 0 4px rgba(29,64,147,0.12); }
+    .fm-field [aria-invalid="true"] { border-color: #c0392b; }
+    .fm-hint { color: #7a889b; font-size: 13.5px; line-height: 1.5; }
+    .fm-check { display: grid; grid-template-columns: 20px 1fr; gap: 12px; align-items: start; }
+    .fm-check input { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--prime-blue); }
+    .fm-check input[aria-invalid="true"] { outline: 2px solid #c0392b; outline-offset: 2px; }
+    .fm-check label { color: #4c5f78; font-size: 14.5px; line-height: 1.6; }
+    .fm-check a { color: var(--prime-blue); text-decoration: underline; text-underline-offset: 3px; }
+    .fm-error { padding: 12px 16px; border-radius: 10px; background: #fdf3f2; color: #8a2d22; font-size: 14.5px; }
+    .fm-submit { justify-self: start; min-height: 56px; padding: 0 32px; display: inline-flex; align-items: center; gap: 12px; border-radius: 999px; background: var(--prime-blue); color: #ffffff; font-family: "Poppins", sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: background 0.2s ease; }
+    .fm-submit:hover { background: var(--prime-blue-hover); }
+    .fm-submit:focus-visible, .fm-check a:focus-visible { outline: 3px solid var(--prime-blue); outline-offset: 3px; }
+    .fm-success { padding: 18px 20px; display: grid; gap: 4px; border-radius: 12px; background: #eef6f0; }
+    .fm-success strong { color: #1f5c33; font-family: "Manrope", sans-serif; font-size: 16px; }
+    .fm-success span { color: #3f6b4e; font-size: 14.5px; line-height: 1.55; }
+    .fm-success:focus { outline: none; }
+    .fm-success[hidden], .fm-error[hidden] { display: none; }
+    @media (max-width: 980px) { .fm-section { padding: 76px 0; } .fm-grid { grid-template-columns: 1fr; gap: 40px; } }
+    @media (max-width: 650px) { .fm-section { padding: 60px 0; } .fm-card { padding: 26px 20px; } .fm-row { grid-template-columns: 1fr; } .fm-submit { width: 100%; justify-content: center; } }
+  </style>
+
+  <style>
+    .fm-field select { -webkit-appearance: none; appearance: none; padding-right: 44px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231d4093' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; background-size: 18px; cursor: pointer; }
+    .fm-section { padding-top: 90px; }
+  </style>
 </head>
 
 
@@ -9400,6 +9444,111 @@
 
     </section>
 
+    <!-- =======================================================
+         CONTACT FORM — mockup only. In WordPress, rebuild it with a
+         form plugin (e.g. Gravity Forms or Contact Form 7) that sends
+         to info@primephysiotherapy.com.au, with spam protection.
+    ======================================================== -->
+
+    <section class="fm-section" aria-labelledby="fmHeading">
+      <div class="px-inner fm-grid">
+
+        <div class="fm-intro">
+          <span class="prime-section-eyebrow">Send us a message</span>
+          <h2 id="fmHeading">How can we <span>help you?</span></h2>
+          <p>Send us a message and our reception team will get back to you during clinic hours. For anything urgent, please call your nearest clinic.</p>
+          <ul class="fm-points">
+            <li>Questions about appointments, fees or services</li>
+            <li>Referrals from doctors</li>
+            <li>Workplace and employer enquiries</li>
+          </ul>
+        </div>
+
+        <form class="fm-card" id="contactForm" novalidate>
+          <div class="fm-row">
+            <div class="fm-field">
+              <label for="fmName">Full name <span aria-hidden="true">*</span></label>
+              <input id="fmName" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="fm-field">
+              <label for="fmPhone">Phone <span aria-hidden="true">*</span></label>
+              <input id="fmPhone" name="phone" type="tel" autocomplete="tel" required>
+            </div>
+          </div>
+
+          <div class="fm-field">
+            <label for="fmEmail">Email <span aria-hidden="true">*</span></label>
+            <input id="fmEmail" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="fm-row">
+            <div class="fm-field">
+              <label for="fmClinic">Preferred clinic</label>
+              <select id="fmClinic" name="clinic">
+                <option value="">No preference</option>
+                <option>Moorebank</option>
+                <option>Liverpool (Whitlam Centre)</option>
+                <option>Green Valley</option>
+              </select>
+            </div>
+            <div class="fm-field">
+              <label for="fmReason">What is it about? <span aria-hidden="true">*</span></label>
+              <select id="fmReason" name="reason" required>
+                <option value="">Please choose</option>
+                <option>Booking an appointment</option>
+                <option>An existing appointment</option>
+                <option>Fees and health funds</option>
+                <option>Doctor referral</option>
+                <option>Workplace or employer enquiry</option>
+                <option>Something else</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fm-field">
+            <label for="fmMessage">Message <span aria-hidden="true">*</span></label>
+            <textarea id="fmMessage" name="message" rows="5" required aria-describedby="fmMessageHint"></textarea>
+            <p class="fm-hint" id="fmMessageHint">Please don't include detailed medical information. Your physiotherapist will talk this through with you.</p>
+          </div>
+
+          <div class="fm-check">
+            <input id="fmConsent" name="consent" type="checkbox" required>
+            <label for="fmConsent">I agree to Prime Physiotherapy using my details to respond to this enquiry, as set out in the <a href="#">Privacy Policy</a>. <span aria-hidden="true">*</span></label>
+          </div>
+
+          <p class="fm-error" id="fmError" role="alert" hidden>Please fill in the fields marked with *.</p>
+
+          <button type="submit" class="fm-submit">Send message <span aria-hidden="true">→</span></button>
+
+          <div class="fm-success" id="fmSuccess" role="status" hidden>
+            <strong>Thanks, your message is ready to send.</strong>
+            <span>This is a design preview, so nothing was sent. On the live site, the form will email Prime's reception team.</span>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var form = document.getElementById("contactForm");
+        var err = document.getElementById("fmError");
+        var ok = document.getElementById("fmSuccess");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var bad = Array.prototype.filter.call(form.querySelectorAll("[required]"), function (f) {
+            var invalid = f.type === "checkbox" ? !f.checked : !f.value.trim() || !f.checkValidity();
+            f.setAttribute("aria-invalid", invalid ? "true" : "false");
+            return invalid;
+          });
+          if (bad.length) { err.hidden = false; ok.hidden = true; bad[0].focus(); return; }
+          err.hidden = true; ok.hidden = false; form.reset();
+          ok.setAttribute("tabindex", "-1"); ok.focus();
+        });
+      });
+    </script>
+
+
     <!-- CONTACT US — Prime's clinic details from the current site -->
     <section class="kp-section tint" aria-label="Contact details">
       <div class="px-inner">
@@ -9439,6 +9588,9 @@
         </div>
       </div>
     </section>
+
+
+
 
 <!-- =======================================================
          CENTRED BOOKING CTA
