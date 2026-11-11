@@ -9358,6 +9358,48 @@
     #services.prime-services { background: #f3f6fb; }
     .prime-service-card { border-color: #e3e9f2; }
   </style>
+
+  <style>
+    /* No blue top bar and no blue line under the menu — set on the page
+       itself too, so it works even if an older partials/header.js loads */
+    .topbar { display: none !important; }
+    .navbar-wrap, .site-header.scrolled .navbar-wrap { border-bottom: 1px solid var(--prime-border) !important; }
+    .site-header.scrolled .navbar-wrap { box-shadow: 0 8px 24px rgba(20,45,78,.06); }
+    .logo { top: 10px; height: 68px; }
+    .site-header.scrolled .logo { top: 7px; height: 56px; }
+    .navbar { padding-left: 120px; }
+    .site-header.scrolled .navbar { padding-left: 94px; }
+    .prime-mega-inner { border-top: 1px solid var(--prime-border) !important; }
+    @media (max-width: 980px) { .navbar { padding-left: 90px; } .logo, .site-header.scrolled .logo { top: 7px; height: 62px; } }
+    @media (max-width: 650px) { .navbar { padding-left: 68px; } .logo, .site-header.scrolled .logo { height: 54px; } }
+  </style>
+
+  <style>
+    /* HOMEPAGE — hero and blue stats strip fill the first screen,
+       so there's no white gap under the strip.
+       89px = height of the white header. */
+    @media (min-width: 981px) {
+      .hero-screen {
+        min-height: calc(100vh - 89px);
+        min-height: calc(100svh - 89px);
+        display: flex;
+        flex-direction: column;
+      }
+      .hero-screen .hero {
+        flex: 1;
+        min-height: 520px;
+        display: flex;
+      }
+      .hero-screen .hero-grid {
+        flex: 1;
+        min-height: 0;
+      }
+      .hero-screen .hero-media {
+        min-height: 0;
+        height: 100%;
+      }
+    }
+  </style>
 </head>
 
 
@@ -9369,6 +9411,9 @@
 
   <main id="main" tabindex="-1">
 
+
+    <!-- Hero + stats strip together fill the first screen exactly -->
+    <div class="hero-screen">
 
     <!-- =======================================================
          SECTION 02 — HERO
@@ -9572,6 +9617,10 @@
 
     </section>
 
+
+
+    </div>
+    <!-- /hero-screen -->
 
 
     <!-- SECTION 04 — ABOUT: TEXT / CLINIC PHOTO / TRUST POINTS -->
