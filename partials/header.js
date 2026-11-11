@@ -14,47 +14,6 @@
   >
 
 
-    <div class="topbar">
-
-      <div class="topbar-inner">
-
-
-        <div class="topbar-left">
-
-          <span>
-            Green Valley
-          </span>
-
-          <span>
-            Liverpool
-          </span>
-
-          <span>
-            Moorebank
-          </span>
-
-        </div>
-
-
-        <div class="topbar-right">
-
-          <a href="#locations">
-            Our Locations
-          </a>
-
-          <a href="contact.html">
-            Contact Us
-          </a>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-
-
     <div class="navbar-wrap">
 
       <nav
@@ -200,6 +159,25 @@
   script.insertAdjacentHTML("beforebegin", html);
 
   /* =======================================================
+     HEADER WITHOUT BLUE: no blue top bar, no blue line under
+     the menu, and no blue line on the dropdown panels.
+     The blue stays at the bottom of the page (footer).
+  ======================================================= */
+  document.head.insertAdjacentHTML("beforeend",
+    "<style>" +
+    ".topbar{display:none}" +
+    ".navbar-wrap,.site-header.scrolled .navbar-wrap{border-bottom:1px solid var(--prime-border)}" +
+    ".site-header.scrolled .navbar-wrap{box-shadow:0 8px 24px rgba(20,45,78,.06)}" +
+    ".logo{top:10px;height:68px}" +
+    ".site-header.scrolled .logo{top:7px;height:56px}" +
+    ".navbar{padding-left:120px}" +
+    ".site-header.scrolled .navbar{padding-left:94px}" +
+    ".prime-mega-inner{border-top:1px solid var(--prime-border)}" +
+    "@media (max-width:980px){.navbar{padding-left:90px}.logo,.site-header.scrolled .logo{top:7px;height:62px}}" +
+    "@media (max-width:650px){.navbar{padding-left:68px}.logo,.site-header.scrolled .logo{height:54px}}" +
+    "</style>");
+
+  /* =======================================================
      SMOOTH PAGE ANIMATIONS
      The page fades in on load, and sections and cards rise
      gently into view as you scroll. Turned off for visitors
@@ -218,7 +196,7 @@
       ".prime-gallery-header", ".prime-about-main", ".prime-about-photo", ".prime-about-point",
       ".au-copy", ".au-photo", ".au-marquee", ".pc-card", ".px-card", ".px-panel", ".px-note",
       ".px-figure", ".px-copy", ".px-video-frame", ".tm-row", ".kp-card", ".kp-row", ".kp-faq",
-      ".hf-intro", ".hf-faq", ".rv-head", ".rv-card", ".ct-card", ".ct-strip", ".prime-services-carousel", ".prime-gallery-item",
+      ".hf-intro", ".hf-faq", ".rv-head", ".rv-card", ".ct-card", ".ct-strip", ".fm-intro", ".fm-card", ".prime-services-carousel", ".prime-gallery-item",
       ".prime-clinic", ".cf-card", ".cf-fees", ".prime-fees-table-wrap", ".prime-payment", ".px-cta-inner",
       ".px-beliefs-list li", ".st-reception li", ".prime-careers-grid > *", ".prime-group-head"
     ].join(",");
